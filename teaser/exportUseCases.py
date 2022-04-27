@@ -40,7 +40,7 @@ for i in range(len(useCases)):
     bldg.name = useCases[i][0]
     bldg.year_of_construction = roomValues[i][0]
     bldg.height_of_floors = roomValues[i][1]
-    # net_leased_area wird im Setter von ThermalZone.area gesetzt!
+    # net_leased_area wird im Setter von ThermalZone.area gesetzt
     # bldg.net_leased_area = roomValues[i][2]*roomValues[i][3]
     bldg.with_ahu = True
     bldg.internal_gains_mode = 3
