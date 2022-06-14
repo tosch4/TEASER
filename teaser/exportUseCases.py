@@ -75,13 +75,13 @@ for i in range(len(useCases)):
     # 270 deg = west --> probably highest solar radiation in the evening / night
     outer_wall.orientation = 270
     outer_wall.tilt = 90
-    # outer_wall.load_type_element(2020, "tabula_standard_1_SFH")
+    # outer_wall.load_type_element(bldg.year_of_construction, "tabula_standard_1_SFH")
     outer_wall.load_type_element(2000, "heavy")
 
     inner_wall = InnerWall(tz)
     inner_wall.area = (roomValues[i][1]*roomValues[i][2]+2*roomValues[i][1]*roomValues[i][3])
     inner_wall.tilt = 90
-    inner_wall.load_type_element(bldg.year_of_construction, "tabula_standard_1_SFH")
+    # inner_wall.load_type_element(bldg.year_of_construction, "tabula_standard_1_SFH")
     inner_wall.load_type_element(2000, "heavy")
 
     ceiling = Ceiling(tz)
@@ -93,7 +93,7 @@ for i in range(len(useCases)):
     floor.load_type_element(bldg.year_of_construction, "tabula_standard_1_SFH")
 
     window = Window(tz)
-    window.area = 0.3*outer_wall.area
+    window.area = 0.3*(roomValues[i][1]*roomValues[i][2])
     window.tilt = 90
     window.orientation = 270
     # window.load_type_element(bldg.year_of_construction, "Waermeschutzverglasung, dreifach")
